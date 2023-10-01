@@ -65,7 +65,7 @@ def square_root1(n):
 
     return 'num_guesses: {}, guess: {}'.format(num_guesses, guess)
 
-#83
+
 def guess_num():
     log('Please think of a number between 0 and 100! ')
 
@@ -92,11 +92,38 @@ def guess_num():
     log("Game over. Your secret number was: {}".format(guess))
 
 
+def decimal_to_binary(n):
+    if n > 0:
+        result = '0b'
+    elif n < 0:
+        result = '-0b'
+        n = -n
+    else:
+        result = '0b0'
+
+    s = ''
+    while n != 0:
+        remainder = n % 2
+        n = n // 2
+        # log(n, remainder)
+        s = str(remainder) + s
+
+    return result + s
+
+
+def test_decimal_to_binary():
+    ensure_equal(decimal_to_binary(567), '0b1000110111', 'decimal_to_binary 1')
+    ensure_equal(decimal_to_binary(24), '0b11000', 'decimal_to_binary 2')
+    ensure_equal(decimal_to_binary(0), '0b0', 'decimal_to_binary 3')
+    ensure_equal(decimal_to_binary(-23), '-0b10111', 'decimal_to_binary 4')
+
+
 def __main():
     # square_root(25)
     # cube_root(27)
     # square_root1(0.25)
-    guess_num()
+    # guess_num()
+    test_decimal_to_binary()
 
 
 __main()
