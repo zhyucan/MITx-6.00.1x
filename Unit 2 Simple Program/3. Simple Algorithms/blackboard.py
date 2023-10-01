@@ -118,12 +118,27 @@ def test_decimal_to_binary():
     ensure_equal(decimal_to_binary(-23), '-0b10111', 'decimal_to_binary 4')
 
 
+# g - (g**2 - n)/2*g
+def newton1(n):
+    epsilon = 0.0001
+    num_guesses = 0
+    guess = 1
+
+    while abs(guess**2 - n) > epsilon:
+        # log(num_guesses, guess)
+        guess = guess - (guess**2 - n)/(2*guess)
+        num_guesses += 1
+
+    return num_guesses, guess
+
+
 def __main():
     # square_root(25)
     # cube_root(27)
     # square_root1(0.25)
     # guess_num()
-    test_decimal_to_binary()
+    # test_decimal_to_binary()
+    log(newton1(50))
 
 
 __main()
