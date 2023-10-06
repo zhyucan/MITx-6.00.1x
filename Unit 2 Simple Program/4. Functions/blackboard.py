@@ -93,12 +93,12 @@ print(x)
 # in g(x): x = 4
 
 
-def h(y):
-    x = x + 1
-
-
-x = 5
-h(2)
+# def h(y):
+#     x = x + 1
+#
+#
+# x = 5
+# h(2)
 # print x
 """
 When you type x inside a function scope, 
@@ -111,12 +111,18 @@ the interpreter has already decided that you mean local scope x,
 and so the definition becomes circular.
 """
 
-def g(x):
-    x = x + 1
-    # print('in g(x): x =', x)
-    # return x
+# def g(x):
+#     x = x + 1
+#     # print('in g(x): x =', x)
+#     # return x
+#
+#
+# x = 3
+# g(x)
 
 
-x = 3
-g(x)
-
+# def add1(a, b):
+#     return a - b
+#
+#
+# log(add1(b=1, a=5))
