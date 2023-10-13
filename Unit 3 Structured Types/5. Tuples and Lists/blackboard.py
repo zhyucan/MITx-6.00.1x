@@ -237,5 +237,5 @@ def fib(n, b):
         return ans
 
 
-b = {1: 1, 2: 2, }
-print(fib(4, b))
+# b = {1: 1, 2: 2, }
+# print(fib(4, b))
