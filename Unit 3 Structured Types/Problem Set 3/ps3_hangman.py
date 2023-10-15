@@ -8,6 +8,7 @@
 # (so be sure to read the docstrings!)
 
 import random
+import string
 from py_tools import *
 
 WORDLIST_FILENAME = "words.txt"
@@ -55,7 +56,19 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     """
-    pass
+    # result = True
+    # for i in secretWord:
+    #     if i not in lettersGuessed:
+    #         result = False
+    #         break
+    # return result
+    return all(i in lettersGuessed for i in secretWord)
+
+
+# secretWord = 'apple'
+# lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's', 'a']
+# print(isWordGuessed(secretWord, lettersGuessed))
+# False
 
 
 def getGuessedWord(secretWord, lettersGuessed):
@@ -65,7 +78,20 @@ def getGuessedWord(secretWord, lettersGuessed):
     returns: string, comprised of letters and underscores that represents
       what letters in secretWord have been guessed so far.
     """
-    pass
+    # result = ''
+    # for i in secretWord:
+    #     if i in lettersGuessed:
+    #         result += i
+    #     else:
+    #         result += '_ '
+    # return result
+    return ''.join([i if i in lettersGuessed else '_ ' for i in secretWord])
+
+
+secretWord = 'apple'
+lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+print(getGuessedWord(secretWord, lettersGuessed))
+# '_ pp_ e'
 
 
 def getAvailableLetters(lettersGuessed):
@@ -74,8 +100,18 @@ def getAvailableLetters(lettersGuessed):
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     """
-    pass
-    
+    letters = string.ascii_lowercase
+    result = ''
+    for i in letters:
+        if i not in lettersGuessed:
+            result += i
+    return result
+
+
+# lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+# print(getAvailableLetters(lettersGuessed))
+# abcdfghjlmnoqtuvwxyz
+
 
 def hangman(secretWord):
     """
@@ -140,6 +176,6 @@ def hangman(secretWord):
 # and run this file to test! (hint: you might want to pick your own
 # secretWord while you're testing)
 
-secretWord = chooseWord(wordlist).lower()
-# secretWord = 'else'
-hangman(secretWord)
+# secretWord = chooseWord(wordlist).lower()
+secretWord = 'else'
+# hangman(secretWord)
