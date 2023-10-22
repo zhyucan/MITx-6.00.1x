@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+from py_tools import *
+
 """
 Created on Thu Jun  9 13:36:46 2016
 
@@ -28,3 +31,4 @@ if data:
             gradesData.append([student[0:2], [student[2]]])
         except IndexError:
             gradesData.append([student[0:2], []])
+    log(gradesData)

@@ -30,4 +30,5 @@ if data:
             gradesData.append([name, [grades]])
         except ValueError:
             gradesData.append([student[:], []])
+    print(gradesData)
 

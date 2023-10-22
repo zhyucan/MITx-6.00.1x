@@ -15,5 +15,3 @@ def ensure_equal(a, b, message):
         log('{}, ({}) 不等于 ({})'.format(message, a, b))
     else:
         log('测试成功')
-
-
