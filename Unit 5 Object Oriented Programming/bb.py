@@ -392,11 +392,46 @@ class D(C, B):
         print("D.z")
 
 
-obj = D()
-print(obj.a)
-print(obj.b)
-print(obj.c)
-print(obj.d)
-obj.x()
-obj.y()
-obj.z()
+# obj = D()
+# print(obj.a)
+# print(obj.b)
+# print(obj.c)
+# print(obj.d)
+# obj.x()
+# obj.y()
+# obj.z()
+
+
+# 2, 3, 5, 7, 11,...
+# def Primes():
+#     primes_list = [2]
+#     i = 2
+#     while True:
+#         i += 1
+#         is_prime = True
+#         for prime in primes_list:
+#             if i % prime == 0:
+#                 is_prime = False
+#                 break
+#         if is_prime:
+#             yield i
+#             primes_list.append(i)
+
+
+def Primes():
+    primes_list = [2]
+    i = 2
+    while True:
+        i += 1
+        for prime in primes_list:
+            if i % prime == 0:
+                break
+        else:
+            yield i
+            primes_list.append(i)
+
+
+# genPrimes = Primes()
+# for i in genPrimes:
+#     log(i)
+
